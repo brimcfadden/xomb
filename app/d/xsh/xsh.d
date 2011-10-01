@@ -24,6 +24,8 @@ void main() {
 
 	MinFS.initialize();
 
+    Syscall.cool("This is a cool syscall.\n");
+
 	printPrompt();
 
 	char[128] str;

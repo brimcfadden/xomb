@@ -38,6 +38,7 @@ public:
 		VirtualMemory.mapSegment(params.dest, params.location, params.destination, params.mode);
 		return SyscallError.Failcopter;
 	}
+	
 
 	// close(ubyte* location);
 	/*SyscallError close(CloseArgs* params) {
@@ -55,6 +56,11 @@ public:
 		ret = VirtualMemory.createAddressSpace();
 
 		return SyscallError.Failcopter;
+	}
+	
+	SyscallError cool(CoolArgs* params) {
+		kprintf!("{}")(params.coolness);
+		return SyscallError.OK;
 	}
 
 	SyscallError yield(YieldArgs* params){

@@ -18,6 +18,7 @@ enum SyscallID : ulong {
 	//Close,
 	CreateAddressSpace,
 	Yield,
+	Cool,
 }
 
 // Names of system calls
@@ -27,7 +28,8 @@ alias Tuple! (
 	"map",				// map()
 	//"close",      // close()
 	"createAddressSpace", // createAddressSpace()
-	"yield"			// yield()
+	"yield",			// yield()
+	"cool"				// cool()
 ) SyscallNames;
 
 
@@ -37,7 +39,8 @@ alias Tuple! (
 	ubyte[],		// create
 	void,			// map
 	AddressSpace,	// createAddressSpace
-	void			// yield
+	void,			// yield
+	void	
 ) SyscallRetTypes;
 
 struct CreateArgs {
@@ -62,6 +65,10 @@ struct YieldArgs {
 
 struct PerfPollArgs {
 	uint event;
+}
+
+struct CoolArgs {
+	char[] coolness;
 }
 
 
